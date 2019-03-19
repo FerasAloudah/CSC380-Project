@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="393.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+    <children>
+        <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #f44336;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="82.0" fitWidth="102.0" layoutX="150.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/console.png" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" layoutX="105.0" layoutY="262.0" prefHeight="23.0" prefWidth="173.0" text="Game Hub" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="18.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0" text="Fastest shipping in the Middle East." textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+      <StackPane fx:id="stackPane" layoutX="469.0" layoutY="40.0" prefHeight="318.0" prefWidth="290.0">
+         <children>
+            <Pane>
+               <children>
+                  <Pane prefHeight="318.0" prefWidth="290.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button fx:id="sSignup" layoutX="152.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="27.0" prefWidth="131.0" stylesheets="@../styling/style.css" text="Sign up" />
+                        <Button fx:id="sGoBack" layoutX="6.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="27.0" prefWidth="131.0" stylesheets="@../styling/style.css" text="Go Back" />
+                     </children>
+                  </Pane>
+                  <TextField fx:id="sName" layoutX="6.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Full Name" />
+                  <TextField fx:id="sEmail" layoutX="5.0" layoutY="50.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Email" />
+                  <TextField fx:id="sUsername" layoutX="6.0" layoutY="100.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Username" />
+                  <PasswordField fx:id="sPassword" layoutX="6.0" layoutY="150.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Password" stylesheets="@../styling/style.css" />
+                  <TextField fx:id="sAddress" layoutX="6.0" layoutY="200.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Address" />
+                  <Label fx:id="sError" alignment="CENTER" layoutX="6.0" layoutY="240.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
+                     <font>
+                        <Font name="Segoe UI" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+              <Pane prefHeight="243.0" prefWidth="283.0">
+                  <children>
+                  <Pane prefHeight="318.0" prefWidth="296.0" style="-fx-background-color: White;">
+                     <children>
+                            <TextField fx:id="txtUsername" layoutX="13.0" layoutY="42.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Username or Email" />
+                            <PasswordField fx:id="txtPassword" layoutX="13.0" layoutY="103.0" onAction="#onEnter" prefHeight="34.0" prefWidth="275.0" promptText="Password" stylesheets="@../styling/style.css" />
+                            <Button fx:id="btnSignin" layoutX="13.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/style.css" text="Sign in" />
+                            <Button fx:id="btnSignup" layoutX="12.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="0.0" prefWidth="275.0" stylesheets="@../styling/style.css" text="Sign up" />
+                            <Separator layoutX="8.0" layoutY="224.0" prefHeight="7.0" prefWidth="275.0" />
+                            <Label alignment="CENTER" layoutX="130.0" layoutY="216.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textFill="#5b5a5a">
+                                <font>
+                                    <Font name="Segoe UI" size="12.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="lblErrors" alignment="CENTER" layoutX="14.0" layoutY="137.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
+                                <font>
+                                    <Font name="Segoe UI" size="10.0" />
+                                </font>
+                            </Label>
+                     </children>
+                  </Pane>
+                  </children>
+              </Pane>
+         </children>
+      </StackPane>
+        <Label alignment="CENTER" layoutX="394.0" layoutY="466.0" prefHeight="23.0" prefWidth="440.0" text="© 2018 GAME HUB. Developed by Feras Aloudah, Nasser Abunehayah, Abdurrahman Allwaimi." textFill="#5b5a5a" AnchorPane.bottomAnchor="14.0">
+            <font>
+                <Font name="Segoe UI" size="10.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="394.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/gamepad.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

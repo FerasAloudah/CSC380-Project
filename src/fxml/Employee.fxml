@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="1101.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeeController">
+    <children>
+      <Pane prefHeight="58.0" prefWidth="1101.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="1101.0" spacing="40.0" style="-fx-background-color: #C62828;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="191.0" text="GAME HUB" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="33.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="products" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefWidth="134.0" styleClass="button3" stylesheets="@../styling/style.css" text="Products" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="customers" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefWidth="134.0" styleClass="button3" stylesheets="@../styling/style.css" text="Customers" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="suppliers" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefWidth="134.0" styleClass="button3" stylesheets="@../styling/style.css" text="Suppliers" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Button fx:id="signout" layoutX="950.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefWidth="134.0" styleClass="button3" stylesheets="@../styling/style.css" text="Sign out" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <StackPane fx:id="stackPane" layoutY="58.0" prefHeight="564.0" prefWidth="1101.0">
+         <children>
+            <Pane prefHeight="564.0" prefWidth="1101.0">
+               <children>
+                  <Pane prefHeight="564.0" prefWidth="429.0" style="-fx-background-color: #F44336;">
+                     <children>
+                        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="75.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/supplier.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="140.0" layoutY="54.0" prefHeight="41.0" prefWidth="191.0" text="Supplier List" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="33.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="sID" layoutX="75.0" layoutY="159.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Supplier ID (Leave empty to auto generate)" />
+                        <TextField fx:id="sName" layoutX="76.0" layoutY="207.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Supplier Name" />
+                        <Button fx:id="sAdd" layoutX="75.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="278.0" style="-fx-border-color: White;" styleClass="button2" stylesheets="@../styling/style.css" text="Add Supplier" />
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutX="428.0" prefHeight="564.0" prefWidth="673.0" style="-fx-background-color: White;">
+                     <children>
+                        <Button fx:id="sUpdate" layoutX="370.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Update Supplier" />
+                        <Button fx:id="sDelete" layoutX="517.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Delete Supplier" />
+                        <Button fx:id="sProducts" layoutX="221.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="View Products" />
+                     </children></AnchorPane>
+                  <TableView fx:id="sTable" layoutX="450.0" layoutY="62.0" prefHeight="440.0" prefWidth="651.0" stylesheets="@../styling/style.css">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label fx:id="sStatus" layoutX="450.0" layoutY="14.0" prefHeight="32.0" prefWidth="354.0" text="Suppliers:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sSearch" layoutX="797.0" layoutY="14.0" onAction="#HandleSearch" prefHeight="32.0" prefWidth="278.0" promptText="Search (Leave empty to get all rows)." />
+               </children>
+            </Pane>
+            <Pane prefHeight="564.0" prefWidth="1101.0">
+               <children>
+                  <Pane prefHeight="564.0" prefWidth="429.0" style="-fx-background-color: #F44336;">
+                     <children>
+                        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="75.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/avatar.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="140.0" layoutY="54.0" prefHeight="41.0" prefWidth="215.0" text="Customer List" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="33.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cID" layoutX="75.0" layoutY="159.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Customer ID (Leave empty to auto generate)" />
+                        <TextField fx:id="cName" layoutX="76.0" layoutY="207.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Customer Name" />
+                        <TextField fx:id="cEmail" layoutX="76.0" layoutY="258.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Email" />
+                        <TextField fx:id="cUsername" layoutX="75.0" layoutY="310.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Username" />
+                        <TextField fx:id="cPassword" layoutX="75.0" layoutY="360.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Password" />
+                        <TextField fx:id="cAddress" layoutX="75.0" layoutY="410.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Address" />
+                        <Button fx:id="cAdd" layoutX="75.0" layoutY="465.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="278.0" style="-fx-border-color: White;" styleClass="button2" stylesheets="@../styling/style.css" text="Add Customer" />
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutX="428.0" prefHeight="564.0" prefWidth="673.0" style="-fx-background-color: White;">
+                     <children>
+                        <Button fx:id="cUpdate" layoutX="370.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Update Customer" />
+                        <Button fx:id="cDelete" layoutX="517.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Delete Customer" />
+                        <Button fx:id="cCart" layoutX="221.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="View Cart" />
+                     </children></AnchorPane>
+                  <TableView fx:id="cTable" layoutX="450.0" layoutY="62.0" prefHeight="440.0" prefWidth="651.0" stylesheets="@../styling/style.css">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label fx:id="cStatus" layoutX="450.0" layoutY="14.0" prefHeight="32.0" prefWidth="354.0" text="Customers:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cSearch" layoutX="797.0" layoutY="14.0" onAction="#HandleSearch" prefHeight="32.0" prefWidth="278.0" promptText="Search (Leave empty to get all rows)." />
+               </children>
+            </Pane>
+            <Pane prefHeight="564.0" prefWidth="1101.0">
+               <children>
+                    <Pane prefHeight="564.0" prefWidth="429.0" style="-fx-background-color: #F44336;">
+                        <children>
+                            <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="75.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/console.png" />
+                                </image>
+                            </ImageView>
+                            <Label alignment="CENTER" layoutX="140.0" layoutY="54.0" prefHeight="41.0" prefWidth="191.0" text="Product List" textFill="WHITE">
+                                <font>
+                                    <Font name="Segoe UI" size="33.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="pID" layoutX="75.0" layoutY="159.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Product ID (Leave empty to auto generate)" />
+                            <TextField fx:id="pName" layoutX="76.0" layoutY="207.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Product Name" />
+                            <TextField fx:id="pPrice" layoutX="76.0" layoutY="258.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Price" />
+                        <TextField fx:id="pQuantity" layoutX="75.0" layoutY="310.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Quantity" />
+                        <TextField fx:id="pSupplier" layoutX="75.0" layoutY="360.0" onAction="#HandleAdd" prefHeight="32.0" prefWidth="278.0" promptText="Supplier ID" />
+                            <Button fx:id="pAdd" layoutX="75.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="278.0" style="-fx-border-color: White;" styleClass="button2" stylesheets="@../styling/style.css" text="Add Product" />
+                        </children>
+                    </Pane>
+                  <AnchorPane layoutX="428.0" prefHeight="564.0" prefWidth="673.0" style="-fx-background-color: White;">
+                     <children>
+                        <Button fx:id="pUpdate" layoutX="370.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Update Product" />
+                        <Button fx:id="pDelete" layoutX="517.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#HandleEvents" prefHeight="32.0" prefWidth="142.0" styleClass="button2" stylesheets="@../styling/style.css" text="Delete Product" />
+                     </children></AnchorPane>
+                    <TableView fx:id="pTable" layoutX="450.0" layoutY="62.0" prefHeight="440.0" prefWidth="651.0" stylesheets="@../styling/style.css">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                    <Label fx:id="pStatus" layoutX="450.0" layoutY="14.0" prefHeight="32.0" prefWidth="354.0" text="Products:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pSearch" layoutX="797.0" layoutY="14.0" onAction="#HandleSearch" prefHeight="32.0" prefWidth="278.0" promptText="Search (Leave empty to get all rows)." />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+    </children>
+</AnchorPane>
